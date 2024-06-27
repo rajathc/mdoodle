@@ -1,9 +1,10 @@
 :root {
     --bg-color: #fafafa;
+    --text-color: #343330;
     --header-color: #343330;
     --primary-color: #008080; 
     --secondary-color: #FF6F61;
-    --icon-hover: #fafafa40;
+    --icon-hover: #fafafa30;
     --filename-color:#bbbbbb;
     display: flex;
     flex-direction: column;
@@ -15,7 +16,7 @@
 body{
     margin: 0px;
     padding: 0px;
-
+    font-family: 'Lato', Helvetica, sans-serif;
 }
 
 header{
@@ -26,7 +27,7 @@ header{
     background-color: var(--header-color);
     margin: 0px;
     padding: 0px 8px;
-    height: 48px;
+    height: 40px;
 }
 
 .teal{
@@ -82,7 +83,7 @@ header{
 
 .icon{
     cursor: pointer;
-    width: 28px;
+    width: 20px;
     height: auto;
 }
 .icon:hover{
@@ -93,13 +94,67 @@ header{
 input[type=text]{
     background-color: var(--icon-hover);
     color: var(--filename-color);
-    height: 24px;
+    height: 20px;
     padding: 8px;
     border: none;
     outline: none;
-    font-family: 'Inter', Courier, monospace;
-    font-size: 20px;
+    font-family: 'Lato', Courier, monospace;
+    font-size: 18px;
     font-weight: 500;
     border-radius: 4px;
 }
 
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    padding: 0px 8px;
+    height: 40px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--header-color);
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0; 
+    padding: 0 8px;
+}
+
+.banner-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.coffee-button {
+    display: inline-block;
+    background-color: #008080;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.coffee-button:hover {
+    background-color: #005555;
+}
+
+.close-btn {
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.close-btn:hover {
+    color: #cccccc;
+}
