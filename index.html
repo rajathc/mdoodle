@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MDoodle - Distraction Free Online Markdown Editor</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:wght@100..900&family=Itim&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/favicon.svg">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="toolbar">
+                <div class="logo-containter">
+                    <div class="logo">
+                        <span class="md teal">M</span><span class="md coral">D</span>
+                        <span class="mdoodle hidden">
+                            <span>M</span><span>D</span><span class="teal">o</span><span class="coral">o</span><span>d</span><span>l</span><span>e</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="tool-group">
+                    <!-- Undo-redo -->
+                    <img class="icon" src="/icons/ArrowArcLeft.svg" alt="undo">
+                    <img class="icon" src="/icons/ArrowArcRight.svg" alt="undo">
+                </div>
+                <div class="tool-group">
+                    <!-- Text tools -->
+                    <img class="icon" src="/icons/TextB.svg" alt="Bold">
+                    <img class="icon" src="/icons/TextItalic.svg" alt="Italics">
+                    <img class="icon" src="/icons/TextT.svg" alt="Text Size">
+                    <img class="icon" src="/icons/TextStrikethrough.svg" alt="Strikethrough">
+                </div>
+                <div class="tool-group">
+                    <!-- List tools -->
+                    <img class="icon" src="/icons/ListBullets.svg" alt="Bullet List">
+                    <img class="icon" src="/icons/ListChecks.svg" alt="Checked List">
+                    <img class="icon" src="/icons/ListNumbers.svg" alt="Number List">
+                </div>
+                <div class="tool-group">
+                    <!-- Misc tools -->
+                    <img class="icon" src="/icons/Quotes.svg" alt="Blockquotes">
+                    <img class="icon" src="/icons/Code.svg" alt="Code">
+                    <img class="icon" src="/icons/Table.svg" alt="Table">
+                    <img class="icon" src="icons/Link.svg" alt="Link">
+                    <img class="icon" src="/icons/Image.svg" alt="Image">
+                </div>
+            </div>
+            <div class="filename">
+                <!-- Filename -->
+                <input type="text" id="filename" name="filename" value="Filename">
+            </div>
+            <div class="tool-group">
+                <!-- Save and Publish Tools -->
+                <img class="icon" src="/icons/Sync.svg" alt="Sync">
+                <img class="icon" src="/icons/Save.svg" alt="Save">
+                <img class="icon" src="/icons/Publish.svg" alt="Publish">
+            </div>    
+        </header>
+    </body>
+</html>

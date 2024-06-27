@@ -1,0 +1,105 @@
+:root {
+    --bg-color: #fafafa;
+    --header-color: #343330;
+    --primary-color: #008080; 
+    --secondary-color: #FF6F61;
+    --icon-hover: #fafafa40;
+    --filename-color:#bbbbbb;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-color);
+    margin: 0px;
+    padding: 0px 8px;
+    height: 48px;
+}
+
+.teal{
+    color: var(--primary-color);
+}
+.coral{
+    color: var(--secondary-color);
+}
+
+.tool-group, .toolbar{
+    display: flex;
+    flex-direction: row;
+}
+
+.tool-group{
+    gap: 8px;
+    padding: 4px;
+}
+
+.toolbar{
+    gap: 16px;
+    padding: 0 8px;
+}
+
+.logo-container {
+    display: inline-block;
+}
+
+.logo{
+    font-family: 'Itim', Courier, monospace;
+    font-size: 32px;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo:hover .md {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.logo:hover .mdoodle {
+    display: flex;
+    color: var(--bg-color);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.icon{
+    cursor: pointer;
+    width: 28px;
+    height: auto;
+}
+.icon:hover{
+    background-color: var(--icon-hover);
+    border-radius: 4px;
+}
+
+input[type=text]{
+    background-color: var(--icon-hover);
+    color: var(--filename-color);
+    height: 24px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-family: 'Inter', Courier, monospace;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
