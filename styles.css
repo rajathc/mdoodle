@@ -117,15 +117,19 @@ input[type=text]{
 
 .banner {
     display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: var(--filename-color);
     color: var(--text-color);
-    padding: 0px 8px;
-    /* height: 40px; */
+    padding: 0px;
+    margin: 0px;
     z-index: 1000;
-    box-shadow: 0 2px 4px var(--header-color);
+    box-shadow: 0 -2px -4px var(--header-color);
 }
 
 .banner-content {
