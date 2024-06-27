@@ -6,6 +6,7 @@
     --secondary-color: #FF6F61;
     --icon-hover: #fafafa30;
     --filename-color:#bbbbbb;
+    --primary-hover:#005555;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -17,10 +18,6 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'Lato', Helvetica, sans-serif;
-}
-
-.white-text{
-    color: var(--bg-color);
 }
 
 header{
@@ -123,10 +120,10 @@ input[type=text]{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondary-color);
-    color: var(--bg-color);
+    background-color: var(--filename-color);
+    color: var(--text-color);
     padding: 0px 8px;
-    height: 40px;
+    /* height: 40px; */
     z-index: 1000;
     box-shadow: 0 2px 4px var(--header-color);
 }
@@ -137,7 +134,7 @@ input[type=text]{
     align-items: center;
     width: 100%;
     margin: 0; 
-    padding: 0 8px;
+    padding: 4px 8px;
 }
 
 .banner-left{
@@ -148,13 +145,13 @@ input[type=text]{
 }
 
 .coffee-button {
-    display: inline-block;
+    display: flex;
     background-color: #008080;
-    color: #ffffff;
+    color: var(--bg-color);
     text-decoration: none;
     padding: 4px 8px;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .coffee-button:hover {
@@ -162,14 +159,14 @@ input[type=text]{
 }
 
 .close-btn {
-    color: #ffffff;
+    color: var(--bg-color);
     font-size: 24px;
     cursor: pointer;
     margin-left: 10px;
 }
 
 .close-btn:hover {
-    color: #cccccc;
+    color: var(--text-color);
 }
 
 
