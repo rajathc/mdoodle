@@ -30,6 +30,14 @@ header{
     height: 40px;
 }
 
+.left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
 .teal{
     color: var(--primary-color);
 }
@@ -50,6 +58,7 @@ header{
 .toolbar{
     gap: 16px;
     padding: 0 8px;
+    height: 28px;
 }
 
 .logo-container {
@@ -157,4 +166,19 @@ input[type=text]{
 
 .close-btn:hover {
     color: #cccccc;
+}
+
+
+/* Responsive styles */
+@media only screen and (min-width: 840px) {
+}
+
+@media only screen and (max-width: 840px) {
+}
+
+@media only screen and (max-width: 480px) {
+    /* .text-tools, .list-tools, .misc-tools, .css-upload, .publish-tools{
+        display: none;
+        visibility: hidden;
+    } */
 }
