@@ -19,6 +19,10 @@ body{
     font-family: 'Lato', Helvetica, sans-serif;
 }
 
+.white-text{
+    color: var(--bg-color);
+}
+
 header{
     display: flex;
     flex-direction: row;
