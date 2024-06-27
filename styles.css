@@ -154,7 +154,17 @@ input[type=text]{
     font-size: 14px;
 }
 
-.coffee-button:hover {
+.focus-button{
+    display: flex;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.coffee-button:hover{
     background-color: #005555;
 }
 
