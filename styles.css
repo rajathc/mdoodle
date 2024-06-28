@@ -12,6 +12,7 @@
     overflow: scroll;
     margin: 0px;
     padding: 0px;
+    height: 100vh;
 }
 
 body{
@@ -114,13 +115,32 @@ input[type=text]{
     border-radius: 4px;
 }
 
-
-.banner {
+.footer{
     display: flex;
+    flex-direction: column;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+
+}
+.footer-data{
+    background-color: #007acc;
+    padding: 2px 8px;
+}
+
+.footer-bold, .footer-text{
+    color: var(--bg-color);
+    font-size: 14px;
+}
+
+.footer-bold{
+    font-weight: 800
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
     flex-direction: row;
     justify-content: center;
     align-items: center;
