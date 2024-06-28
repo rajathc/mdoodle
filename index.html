@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MDoodle - Distraction Free Online Markdown Editor</title>
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Itim&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -25,20 +26,20 @@
                         <img class="icon" src="icons/ArrowArcLeft.svg?" alt="undo">
                         <img class="icon" src="icons/ArrowArcRight.svg?" alt="undo">
                     </div>
-                    <div class="tool-group text-tools">
+                    <div class="tool-group hidden-sm">
                         <!-- Text tools -->
                         <img class="icon" src="icons/TextB.svg?" alt="Bold">
                         <img class="icon" src="icons/TextItalic.svg?" alt="Italics">
                         <img class="icon" src="icons/TextT.svg?" alt="Text Size">
                         <img class="icon" src="icons/TextStrikethrough.svg?" alt="Strikethrough">
                     </div>
-                    <div class="tool-group list-tools">
+                    <div class="tool-group hidden-sm">
                         <!-- List tools -->
                         <img class="icon" src="icons/ListBullets.svg?" alt="Bullet List">
                         <img class="icon" src="icons/ListChecks.svg?" alt="Checked List">
                         <img class="icon" src="icons/ListNumbers.svg?" alt="Number List">
                     </div>
-                    <div class="tool-group misc-tools">
+                    <div class="tool-group hidden-sm">
                         <!-- Misc tools -->
                         <img class="icon" src="icons/Quotes.svg?" alt="Blockquotes">
                         <img class="icon" src="icons/Code.svg?" alt="Code">
@@ -49,15 +50,15 @@
                 </div>
             </div>
             <div class="tool-group css-upload">
-                <img class="icon" src="icons/FileCss.svg?" alt="CSS File">
-                <img class="icon" src="icons/Goal.svg" alt="Goal">
-                <div class="focus-button"><img class="icon" src="icons/target.svg" alt="Focus">Focus</div>
+                <img class="icon hidden-sm" src="icons/Goal.svg" alt="Goal">
+                <div class="focus-button"><img class="icon-focus" src="icons/target.svg" alt="Focus">Focus</div>
+                <img class="icon hidden-sm" src="icons/FileCss.svg?" alt="CSS File">
             </div>
             <div class="filename">
                 <!-- Filename -->
                 <input type="text" id="filename" name="filename" value="Filename">
             </div>
-            <div class="tool-group publish-tools">
+            <div class="tool-group hidden-sm">
                 <!-- Save and Publish Tools -->
                 <img class="icon" src="icons/CircleHalf.svg" alt="Dark/Light mode">
                 <img class="icon" src="icons/ArrowsOut.svg" alt="Fullscreen">
