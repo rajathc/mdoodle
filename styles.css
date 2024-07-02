@@ -1,11 +1,12 @@
 :root {
     --bg-color: #fafafa;
     --text-color: #343330;
+    --border-color: #dddddd;
     --header-color: #343330;
     --primary-color: #008080; 
     --secondary-color: #FF6F61;
-    --icon-hover: #fafafa30;
-    --filename-color:#bbbbbb;
+    --icon-hover: #34333030;
+    --filename-color:#dddddd;
     --primary-hover:#005555;
     display: flex;
     flex-direction: column;
@@ -26,13 +27,13 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--header-color);
     margin: 0px;
     padding: 0px 8px;
     height: 40px;
+    border-bottom: var(--border-color) 1px solid;
 }
 
-.left{
+.left, .right{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -87,7 +88,7 @@ header{
 
 .logo:hover .mdoodle {
     display: flex;
-    color: var(--bg-color);
+    color: var(--text-color);
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
@@ -109,11 +110,10 @@ header{
 }
 
 input[type=text]{
-    background-color: var(--icon-hover);
+    background-color: var(--bg-color);
     color: var(--filename-color);
-    height: 20px;
-    padding: 8px;
-    border: none;
+    padding: 4px 8px;
+    border: var(--border-color) 1px solid;
     outline: none;
     font-family: 'Lato', Courier, monospace;
     font-size: 18px;
