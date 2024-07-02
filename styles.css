@@ -131,12 +131,11 @@ input[type=text]{
 
 }
 .footer-data{
-    background-color: #007acc;
     padding: 2px 8px;
 }
 
 .footer-bold, .footer-text{
-    color: var(--bg-color);
+    color: var(--filename-color);
     font-size: 14px;
 }
 
