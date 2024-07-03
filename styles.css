@@ -193,10 +193,6 @@ input[type=text]{
     align-items: center;
 }
 
-.alpha-symbol {
-    display: none;
-}
-
 /* Markdown Styles */
 
 .editor-container {
@@ -393,11 +389,5 @@ button{
 @media only screen and (max-width: 480px) {
     .hidden-sm{
         display: none;
-    }
-        .alpha-text {
-        display: none;
-    }
-    .alpha-symbol {
-        display: inline;
     }
 }
