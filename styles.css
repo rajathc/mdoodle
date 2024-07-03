@@ -182,13 +182,19 @@ input[type=text]{
     display: block;
 }
 
-.version{
+.version {
     background-color: var(--secondary-color);
     padding: 2px 8px;
     font-size: 14px;
     color: var(--dark-text-color);
     border-radius: 9999px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.alpha-symbol {
+    display: none;
 }
 
 /* Markdown Styles */
@@ -387,5 +393,11 @@ button{
 @media only screen and (max-width: 480px) {
     .hidden-sm{
         display: none;
+    }
+        .alpha-text {
+        display: none;
+    }
+    .alpha-symbol {
+        display: inline;
     }
 }
