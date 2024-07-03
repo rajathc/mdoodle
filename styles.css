@@ -5,6 +5,7 @@
     --header-color: #fafafa;
     --primary-color: #008080; 
     --secondary-color: #FF6F61;
+    --text-input-bg: #fafafa40;
     --icon-color: #b2b2b2;
     --icon-hover: #34333030;
     --filename-color:#dddddd;
@@ -29,10 +30,12 @@ body{
     font-family: 'Lato', Helvetica, sans-serif;
     background-color: var(--bg-color);
     transition: background-color 0.3s, color 0.3s;
+    color: var(--text-color);
 }
 
 body.dark-mode {
     background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
   }
 
 #fullscreen {
@@ -136,7 +139,7 @@ header.dark-mode {
 }
 
 input[type=text]{
-    background-color: var(--bg-color);
+    background-color: var(--text-input-bg);
     color: var(--filename-color);
     padding: 4px 8px;
     border: var(--border-color) 1px solid;
