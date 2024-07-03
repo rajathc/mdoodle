@@ -5,11 +5,13 @@
     --header-color: #fafafa;
     --primary-color: #008080; 
     --secondary-color: #FF6F61;
+    --icon-color: #b2b2b2;
     --icon-hover: #34333030;
     --filename-color:#dddddd;
     --primary-hover:#005555;
     --dark-bg-color: #121212;
     --dark-header-color: #121212;
+    --dark-text-color: #fafafa;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -109,7 +111,7 @@ header.dark-mode {
 
 .logo:hover .mdoodle {
     display: flex;
-    color: var(--text-color);
+    color: var(--icon-color);
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
