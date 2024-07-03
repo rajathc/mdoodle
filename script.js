@@ -98,9 +98,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var popupButton = document.getElementById('popupButton');
 var popup = document.getElementById('popup');
-var mobileOverlay = document.createElement('div'); // Create mobile overlay element
-mobileOverlay.classList.add('mobile-overlay'); // Add mobile overlay class
-document.body.appendChild(mobileOverlay); // Append mobile overlay to document body
 
 var isOpen = false; // Track if popup is open
 
@@ -117,44 +114,55 @@ popupButton.addEventListener('click', function(event) {
 
 // Function to open the popup
 function openPopup() {
-    // Calculate position relative to button
-    var rect = popupButton.getBoundingClientRect();
-    var popupWidth = popup.offsetWidth;
-    var popupHeight = popup.offsetHeight;
+    // Determine screen width for responsive positioning
+    var screenWidth = window.innerWidth;
 
-    // Position popup below the button
-    popup.style.top = rect.bottom + 12 + 'px'; // 12px below button
-    popup.style.left = rect.left + (rect.width / 2) - (popupWidth / 2) + 'px';
-
-    // Show popup and mobile overlay
-    popup.style.display = 'block';
-    popup.classList.add('popup-below');
-    
-    // Show mobile overlay only on phones
-    if (window.innerWidth <= 768) {
-        mobileOverlay.style.display = 'block';
+    // Show popup based on screen width
+    if (screenWidth <= 768) {
+        // Mobile screen positioning
+        popup.classList.add('popup-mobile');
+    } else {
+        // Desktop screen positioning
+        popup.classList.add('popup-desktop');
+        
+        // Calculate position relative to the button
+        var buttonRect = popupButton.getBoundingClientRect();
+        var popupWidth = popup.offsetWidth;
+        
+        var popupLeft = buttonRect.left + (buttonRect.width / 2) - (popupWidth / 2);
+        var popupTop = buttonRect.bottom + 12; // 12px below the button
+        
+        // Apply calculated position
+        popup.style.left = popupLeft + 'px';
+        popup.style.top = popupTop + 'px';
     }
+
+    // Show popup
+    popup.style.display = 'block';
 
     // Set isOpen to true
     isOpen = true;
 
-    // Close popup when clicking outside or on mobile overlay
+    // Close popup when clicking outside
     document.addEventListener('click', closePopupOutside);
 }
 
 // Function to close the popup
 function closePopup() {
     popup.style.display = 'none';
-    popup.classList.remove('popup-below');
-    mobileOverlay.style.display = 'none';
+    popup.classList.remove('popup-mobile', 'popup-desktop');
     isOpen = false;
     document.removeEventListener('click', closePopupOutside);
 }
 
-// Function to close popup when clicking outside or on mobile overlay
+// Function to close popup when clicking outside
 function closePopupOutside(event) {
-    if (!popup.contains(event.target) && event.target !== popupButton && !mobileOverlay.contains(event.target)) {
+    if (!popup.contains(event.target) && event.target !== popupButton) {
         closePopup();
     }
 }
+
+
+
+
 
