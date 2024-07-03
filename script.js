@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
 });
 
+// Fullscreen toggle
+
 const fullscreenContainer = document.getElementById('fullscreen-container');
 const enterFullscreenIcon = document.getElementById('enter-fullscreen');
 const exitFullscreenIcon = document.getElementById('exit-fullscreen');
@@ -46,3 +48,47 @@ document.addEventListener('fullscreenchange', () => {
         exitFullscreenIcon.classList.add('visible');
     }
 });
+
+// Dark/light mode toggle
+
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.getElementById("theme-toggle");
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    let currentTheme = localStorage.getItem("theme");
+
+    function applyTheme(theme) {
+      if (theme === "dark") {
+        document.body.classList.add("dark-mode");
+        document.querySelectorAll('header, footer, .container').forEach(function(element) {
+          element.classList.add('dark-mode');
+        });
+      } else {
+        document.body.classList.remove("dark-mode");
+        document.querySelectorAll('header, footer, .container').forEach(function(element) {
+          element.classList.remove('dark-mode');
+        });
+      }
+    }
+
+    if (currentTheme === null) {
+      currentTheme = prefersDarkScheme.matches ? "dark" : "light";
+    }
+
+    applyTheme(currentTheme);
+
+    toggleButton.addEventListener("click", function() {
+      const isDarkMode = document.body.classList.toggle("dark-mode");
+      document.querySelectorAll('header, footer, .container').forEach(function(element) {
+        element.classList.toggle('dark-mode', isDarkMode);
+      });
+      const theme = isDarkMode ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+    });
+
+    prefersDarkScheme.addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        const newColorScheme = e.matches ? "dark" : "light";
+        applyTheme(newColorScheme);
+      }
+    });
+  });
