@@ -10,6 +10,7 @@
     --icon-hover: #34333030;
     --filename-color:#dddddd;
     --border-color: #dddddd;
+    --shadow-color: #dddddd40;
     --primary-hover:#005555;
     --overlay-color: #12121240;
     --dark-bg-color: #121212;
@@ -26,6 +27,7 @@
 
 body{
     margin: 0px;
+    margin-top: 40px;
     padding: 0px;
     font-family: 'Lato', Helvetica, sans-serif;
     background-color: var(--bg-color);
@@ -52,10 +54,17 @@ header{
     align-items: center;
     background-color: var(--header-color);
     margin: 0px;
-    padding: 0px 8px;
+    padding: 0px;
     height: 40px;
     border-bottom: var(--border-color) 1px solid;
     transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0px 1px 12px var(--shadow-color);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 header.dark-mode {
@@ -68,6 +77,13 @@ header.dark-mode {
     align-items: center;
     margin: 0;
     padding: 0;
+}
+
+.left{
+    padding-left: 8px;
+}
+.right{
+    padding-right: 8px;
 }
 
 .teal{
@@ -158,6 +174,8 @@ input[type=text]{
 }
 
 .footer{
+    position: fixed;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     position: fixed;
