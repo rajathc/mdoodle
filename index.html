@@ -37,7 +37,7 @@
                 <div class="tool-group">
                     <!-- Save and Publish Tools -->
                     <img class="icon" id="theme-toggle" src="icons/CircleHalf.svg" alt="Dark/Light mode">
-                    <img class="icon" src="icons/target.svg" alt="Word Target">
+                    <img class="icon" id="popupButton" src="icons/target.svg" alt="Word Target">
                     <img class="icon hidden-sm" src="icons/Option.svg" alt="Shortcuts">
                 </div>
                 <div class="tool-group">
@@ -54,6 +54,18 @@
         <div>
             <a href="/md_test.html" class="test">Try Markdown Here!</a>
         </div>
+        
+        <!-- Target Popup -->
+        <div id="popup" class="popup">
+            <div class="target-popup">
+                <div>
+                    Word Target
+                </div>
+                <input type="number" id="taget-number" name="word count" placeholder="400">
+                <button type="button">Set</button>
+            </div>  
+        </div>
+
 
         <footer class="footer">
             <dix id="banner" class="banner">

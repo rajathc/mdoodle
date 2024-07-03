@@ -8,10 +8,13 @@
     --icon-color: #b2b2b2;
     --icon-hover: #34333030;
     --filename-color:#dddddd;
+    --border-color: #dddddd;
     --primary-hover:#005555;
+    --overlay-color: #12121240;
     --dark-bg-color: #121212;
     --dark-header-color: #121212;
     --dark-text-color: #fafafa;
+
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -239,6 +242,56 @@ input[type=text]{
     color: var(--text-color);
 }
 
+.popup {
+    position: fixed;
+    background: var(--bg-color);
+    border: 1px solid var(--filename-color);
+    border-radius: 16px;
+    padding: 24px 8px;
+    display: none;
+    z-index: 1000;
+}
+
+/* Default style for larger screens */
+.popup-below {
+    position: absolute;
+    top: calc(100% + 12px); /* Position 12px below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Hidden by default */
+}
+
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color) ;
+    z-index: 999; /* Lower than popup z-index */
+    display: none;
+}
+
+.target-popup{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    display: flex;
+    padding: 4px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: var(--secondary-color);
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
 
 /* Responsive styles */
 @media only screen and (min-width: 840px) {
@@ -250,5 +303,10 @@ input[type=text]{
 @media only screen and (max-width: 480px) {
     .hidden-sm{
         display: none;
+    }
+    .popup {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
