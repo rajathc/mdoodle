@@ -5,6 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>mdoodle - Distraction Free Online Markdown Editor</title>
         <link rel="stylesheet" href="styles.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/neo.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/markdown/markdown.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.8/marked.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+        
         <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Itim&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="favicon.svg">
     </head>
@@ -26,6 +36,9 @@
                         <img class="icon" src="icons/ArrowArcLeft.svg?" alt="undo">
                         <img class="icon" src="icons/ArrowArcRight.svg?" alt="undo">
                     </div>
+                </div>
+                <div class="version">
+                    alpha
                 </div>
             </div>
                 <!-- Filename -->
@@ -51,29 +64,25 @@
                 </div>
             </div>
         </header>
-        <ul>
-            <li>Bottom Banner ✅</li>
-            <li><a href="./md_test.html" class="test">Try Markdown Here!</a> Not working in Dev 🙁</li>
-            <li>Full-screen mode in Desktops ✅</li>
-            <li>Dark mode toggle ✅</li>
-            <li>Focus mode popup ✅</li>
-            <li>Shortcut Popup 🔜</li>
-        </ul>
+        <!-- Markdown Editor -->
+
+        <div class="editor-container">
+            <textarea id="markdown-editor" placeholder="Type here!"></textarea>
+            <div class="separator"></div>
+            <div id="preview"></div>
+        </div>
         
-        <!-- Target Popup -->
         <div id="popup" class="popup">
             <div class="target-popup">
-                <div>
-                    Word Target
-                </div>
+                <div>Word Target</div>
                 <input type="number" id="taget-number" name="word count" placeholder="400">
                 <button type="button">Set</button>
-            </div>  
+            </div>
         </div>
 
-
+<!-- Footer -->
         <footer class="footer">
-            <dix id="banner" class="banner">
+            <div id="banner" class="banner">
                 <div class="banner-content">
                     <div class="banner-left">
                         <div>This editor is free to use. Consider supporting the website hosting if you find it helpful</div>        
