@@ -8,7 +8,7 @@
     --text-input-bg: #fafafa40;
     --icon-color: #b2b2b2;
     --icon-hover: #34333030;
-    --filename-color:#dddddd;
+    --filename-color:#b2b2b2;
     --border-color: #dddddd;
     --shadow-color: #dddddd40;
     --primary-hover:#005555;
@@ -16,6 +16,7 @@
     --dark-bg-color: #121212;
     --dark-header-color: #121212;
     --dark-text-color: #fafafa;
+    --tooltip-color: #444;
 
     display: flex;
     flex-direction: column;
@@ -175,6 +176,20 @@ input[type=text]{
     border-radius: 4px;
 }
 
+#filename {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--filename-color);
+}
+#filename.editable {
+    border: 1px solid var(--border-color);
+    cursor: text;
+}
+
 .fullscreen-icon {
     display: none;
 }
@@ -191,6 +206,37 @@ input[type=text]{
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+
+/* Tooltips */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    display: flex;
+    visibility: hidden;
+    width: fit-content;
+    background-color: var(--tooltip-color);
+    white-space: nowrap;
+    color: var(--dark-text-color);
+    text-align: center;
+    border-radius: 4px;
+    padding: 2px 4px;
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 8px);
+    left: 50%;
+    margin-left: -30px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Markdown Styles */

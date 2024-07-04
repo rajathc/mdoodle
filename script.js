@@ -185,3 +185,42 @@ function updatePreview() {
     const htmlText = marked.parse(markdownText);
     document.getElementById('preview').innerHTML = htmlText;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const filenameSpan = document.getElementById('filename');
+
+    filenameSpan.addEventListener('dblclick', () => {
+        filenameSpan.contentEditable = true;
+        filenameSpan.classList.add('editable');
+        filenameSpan.focus();
+    });
+
+    filenameSpan.addEventListener('blur', () => {
+        filenameSpan.contentEditable = false;
+        filenameSpan.classList.remove('editable');
+    });
+
+    filenameSpan.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            filenameSpan.contentEditable = false;
+            filenameSpan.classList.remove('editable');
+        }
+    });
+
+    const saveButton = document.getElementById('save-button');
+    saveButton.addEventListener('click', async () => {
+        const filename = filenameSpan.innerText.trim();
+        const content = document.getElementById('markdown-editor').value;
+        try {
+            const response = await fetch('/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ filename, content })
+            });
+            const result = await response.json();
+            console.log('File saved with ID:', result.fileId);
+        } catch (error) {
+            console.error('Error saving file:', error);
+        }
+    });
+});
