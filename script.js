@@ -123,3 +123,65 @@ function applyTheme(theme) {
     document.getElementById('markdown-editor').classList.toggle('dark-mode', isDarkMode);
     document.getElementById('preview').classList.toggle('dark-mode', isDarkMode);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const undoIcon = document.getElementById('undo-icon');
+    const redoIcon = document.getElementById('redo-icon');
+    const markdownEditor = document.getElementById('markdown-editor');
+    
+    // Stack to store the history of changes
+    let undoStack = [];
+    let redoStack = [];
+    let isTyping = false;
+
+    // Save the current state of the editor to the undo stack
+    function saveState() {
+        if (isTyping) return; // Prevent saving state on every keystroke
+        undoStack.push(markdownEditor.value);
+        redoStack = []; // Clear the redo stack whenever a new change is made
+    }
+
+    // Call saveState when user starts typing
+    markdownEditor.addEventListener('input', () => {
+        if (!isTyping) {
+            isTyping = true;
+            setTimeout(() => {
+                saveState();
+                isTyping = false;
+            }, 500); // Adjust delay as needed
+        }
+    });
+
+    // Undo function
+    function undo() {
+        if (undoStack.length > 0) {
+            redoStack.push(markdownEditor.value);
+            const previousState = undoStack.pop();
+            markdownEditor.value = previousState;
+            updatePreview();
+        }
+    }
+
+    // Redo function
+    function redo() {
+        if (redoStack.length > 0) {
+            undoStack.push(markdownEditor.value);
+            const nextState = redoStack.pop();
+            markdownEditor.value = nextState;
+            updatePreview();
+        }
+    }
+
+    // Event listeners for undo and redo icons
+    undoIcon.addEventListener('click', undo);
+    redoIcon.addEventListener('click', redo);
+
+    // Initial save state
+    saveState();
+});
+
+function updatePreview() {
+    const markdownText = markdownEditor.value;
+    const htmlText = marked.parse(markdownText);
+    document.getElementById('preview').innerHTML = htmlText;
+}
