@@ -224,3 +224,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const markdownEditor = document.getElementById('markdown-editor');
+    const wordCountSpan = document.getElementById('word-count');
+    const wordLabelSpan = document.getElementById('word-label');
+
+    markdownEditor.addEventListener('input', function() {
+        const text = markdownEditor.value.trim();
+        const words = text === '' ? 0 : text.match(/\S+/g).length;
+
+        // Update word count
+        wordCountSpan.textContent = words;
+
+        // Update word label
+        if (words === 1) {
+            wordLabelSpan.textContent = 'word';
+        } else {
+            wordLabelSpan.textContent = 'words';
+        }
+    });
+});
